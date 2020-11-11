@@ -39,7 +39,8 @@ namespace Codewars
 
         private static int[][] CropZeros(int[][] universe)
         {
-            while()
+            //TODO
+            //while()
 
             return universe;
         }

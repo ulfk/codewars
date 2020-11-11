@@ -1,9 +1,10 @@
-﻿using System;
-
+﻿
 namespace Codewars
 {
     public static class MatrixDeterminant
     {
+        // https://www.codewars.com/kata/52a382ee44408cea2500074c
+
         public static int Determinant(int[][] matrix)
         {
             var dim = matrix.GetLength(0);
