@@ -9,6 +9,7 @@ public class ValidBracesTests
 {
     [DataTestMethod]
     [DataRow("(){}[]",true)]
+    [DataRow("((([{}])()))", true)]
     [DataRow("([{}])",true)]
     [DataRow("(}",false)]
     [DataRow("[(])",false)]
