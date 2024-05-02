@@ -54,6 +54,6 @@ public class RailFenceCipher
             result[chIdx] = input[inputIdx++];
         }
 
-        return string.Join("", result);
+        return new string(result);
     }
 }
