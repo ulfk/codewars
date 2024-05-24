@@ -7,7 +7,7 @@ public static class NotVerySecure
 {
     public static bool Alphanumeric(string str)
     {
-        var regex = new Regex("[a-zA-Z0-9]+");
+        var regex = new Regex("^[a-zA-Z0-9]+$");
         return regex.IsMatch(str);
     }
 }
