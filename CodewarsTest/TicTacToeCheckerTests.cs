@@ -8,7 +8,7 @@ namespace CodewarsTest;
 public class TicTacToeCheckerTests
 {
     [TestMethod]
-    public void TestMethod1()
+    public void BasicTest()
     {
         int[,] board = { { 1, 1, 1 }, { 0, 2, 2 }, { 0, 0, 0 } };
         var result = new TicTacToeChecker().IsSolved(board);
