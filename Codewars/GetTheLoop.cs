@@ -9,22 +9,17 @@ namespace Codewars
 
         public class Node
         {
-            public Node next { get; set; }
+            public Node Next { get; set; }
         }
 
-        private class NodeItem
+        private class NodeItem(Node node, int index)
         {
-            public NodeItem(Node node, int index)
-            {
-                Node = node;
-                Index = index;
-            }
-            public Node Node { get; set; }
-            public int Index { get; set; }
+            public Node Node { get; } = node;
+            public int Index { get; } = index;
 
             public override bool Equals(object obj)
             {
-                return Node.Equals(((NodeItem)obj).Node);
+                return Node.Equals(((NodeItem)obj)?.Node);
             }
 
             public override int GetHashCode()
@@ -42,7 +37,7 @@ namespace Codewars
             {
                 items.Add(item);
                 index++;
-                item = new NodeItem(item.Node.next, index);
+                item = new NodeItem(item.Node.Next, index);
             }
 
             var branch = items.Single(n => n.Equals(item));

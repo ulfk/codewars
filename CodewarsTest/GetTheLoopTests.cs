@@ -1,5 +1,4 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Codewars;
 using FluentAssertions;
 using static Codewars.GetTheLoop;
 
@@ -17,11 +16,11 @@ namespace CodewarsTest
                 var n = new Node();
                 if (idx == tail)
                     loopStart = n;
-                node.next = n;
+                node.Next = n;
                 if (idx < total - 1)
                     node = n;
                 else
-                    n.next = loopStart;
+                    n.Next = loopStart;
             }
             return node;
         }
@@ -30,7 +29,7 @@ namespace CodewarsTest
         public void TestMethod1()
         {
             var loop = CreateLoop(4, 300004);
-            var loopLen = GetTheLoop.GetLoopSize(loop);
+            var loopLen = GetLoopSize(loop);
             loopLen.Should().Be(300000);
         }
     }

@@ -8,11 +8,9 @@ namespace Codewars
         public static int Determinant(int[][] matrix)
         {
             var dim = matrix.GetLength(0);
-            if (dim == 1)
-                return matrix[0][0];
+            if (dim == 1) return matrix[0][0];
 
-            if (dim == 2)
-                return matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0];
+            if (dim == 2) return matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0];
 
             var sign = 1;
             var result = 0;
@@ -25,7 +23,7 @@ namespace Codewars
             return result;
         }
 
-        public static int[][] GetSubMatrix(int[][] matrix, int colToSkip)
+        private static int[][] GetSubMatrix(int[][] matrix, int colToSkip)
         {
             var dim = matrix.GetLength(0);
             var result = CreateMatrix(dim - 1);
@@ -42,7 +40,7 @@ namespace Codewars
             return result;
         }
 
-        public static int[][] CreateMatrix(int dim)
+        private static int[][] CreateMatrix(int dim)
         {
             var result = new int[dim][];
             for (var idx = 0; idx < dim; idx++)

@@ -9,7 +9,7 @@ namespace Codewars
     {
         private static class MorseCode
         {
-            private static Dictionary<string, String> _morseCodes = new Dictionary<string, String>()
+            private static readonly Dictionary<string, String> MorseCodes = new()
             {
                 {"A" , ".-"},
                 {"B" , "-..."},
@@ -51,7 +51,7 @@ namespace Codewars
 
             public static string Get(string morseCode)
             {
-                return _morseCodes.Single(k => k.Value == morseCode).Key;
+                return MorseCodes.Single(k => k.Value == morseCode).Key;
             }
         }
 
@@ -59,7 +59,7 @@ namespace Codewars
         // https://www.codewars.com/kata/54b724efac3d5402db00065e/csharp
         public static string Decode(string morseCode)
         {
-            var words = morseCode.Trim().Split(new[] { "   " }, StringSplitOptions.None);
+            var words = morseCode.Trim().Split(["   "], StringSplitOptions.None);
             var result = words.Select(word => word.Split(' ')).Select(letters => string.Join("", letters.Select(MorseCode.Get)));
             return string.Join(' ', result);
         }
@@ -132,7 +132,7 @@ namespace Codewars
         private static string DecodeSignal(string signal) => signal == _dot ? "." : (signal == _dash ? "-" : "?");
 
         private static string Decode(string text, string separator, Func<string,string> decoder, string glue = "") =>
-            string.Join(glue, text.Split(new[] { separator }, StringSplitOptions.None).Select(decoder));
+            string.Join(glue, text.Split([separator], StringSplitOptions.None).Select(decoder));
 
     }
 

@@ -16,7 +16,7 @@ public static class ConnectFour
     private const int Yellow = 2;
     private const int Rows = 6;
     private const int Columns = 7;
-    private static string[] Players = new string[] { "Draw", "Red", "Yellow" };
+    private static readonly string[] Players = { "Draw", "Red", "Yellow" };
 
     public static string Play(List<string> moves)
     {

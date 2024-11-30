@@ -13,7 +13,7 @@ public class BreadcrumbGenerator
         var parts = uri.Segments.Select(x => x.Replace("/","")).ToArray();
         
         var lastPart = parts.Last();
-        lastPart = RemoveParts(lastPart, new[]{".html",".htm",".php",".asp"});
+        lastPart = RemoveParts(lastPart, [".html",".htm",".php",".asp"]);
         if (lastPart == "index")
         {
             parts = parts.Take(parts.Length - 1).ToArray();
@@ -58,5 +58,6 @@ public class BreadcrumbGenerator
         return result.ToUpper();
     }
 
-    private static readonly string[] ReservedWords = {"the", "of", "in", "from", "by", "with", "and", "or", "for", "to", "at", "a"};
+    private static readonly string[] ReservedWords = 
+        [ "the", "of", "in", "from", "by", "with", "and", "or", "for", "to", "at", "a" ];
 }

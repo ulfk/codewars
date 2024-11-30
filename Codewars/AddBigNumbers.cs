@@ -45,13 +45,5 @@ namespace Codewars
             var substr = start < 0 ? val.Substring(0, start + NumDigits) : val.Substring(start, NumDigits);
             return long.Parse(substr);
         }
-
-
-        /*
-        Assert.AreEqual("29", Kata.Add("12","17"));
-        Assert.AreEqual("7", Kata.Add("2","5"));
-        Assert.AreEqual("0", Kata.Add("0","0"));
-        Assert.AreEqual("1312462463", Kata.Add("81231231","1231231232"));
-         */
     }
 }

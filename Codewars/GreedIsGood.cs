@@ -5,7 +5,8 @@ namespace Codewars;
 
 public static class GreedIsGood
 {
-    private static Dictionary<(int Value, int Amount), int> Rules = new Dictionary<(int Value, int Amount), int> { 
+    private static readonly Dictionary<(int Value, int Amount), int> Rules = new()
+    { 
         { (1,3), 1000 },
         { (6,3), 600 },
         { (5,3), 500 },
@@ -18,7 +19,7 @@ public static class GreedIsGood
 
     private class DiceGroup
     {
-        public int Value { get; set; }
+        public int Value { get; init; }
         public int Count { get; set; }
     }
 
